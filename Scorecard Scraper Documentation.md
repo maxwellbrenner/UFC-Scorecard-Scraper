@@ -41,8 +41,8 @@ This program is designed to scrape event data and scorecards from the UFC websit
    **Returns**: A list of folder names without PDFs.
 
 ### 10. `create_pdf_from_images(folder_path)`  
-    **Description**: Creates a PDF file from all `.jpg` or `.jpeg` images within a specified folder. Used to manually compile PDFs if the automated process fails.  
-    **Returns**: A PDF file if images exist, otherwise outputs an error message.
+   **Description**: Creates a PDF file from all `.jpg` or `.jpeg` images within a specified folder. Used to manually compile PDFs if the automated process fails.  
+   **Returns**: A PDF file if images exist, otherwise outputs an error message.
 
 ## Program Execution Flow
 
