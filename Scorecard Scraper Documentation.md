@@ -9,40 +9,40 @@ This program is designed to scrape event data and scorecards from the UFC websit
  - **Returns**: The unique identifier string if found, otherwise `None`.
 
 ### 2. `extract_unique_identifier(url)`  
-   **Description**: Extracts a broader identifier from the UFC event URL using the section after `'/news/'`. Helps in identifying URLs with varied structures to ensure data completeness.  
-   **Returns**: The unique identifier string if found, otherwise `None`.
+ - **Description**: Extracts a broader identifier from the UFC event URL using the section after `'/news/'`. Helps in identifying URLs with varied structures to ensure data completeness.  
+ - **Returns**: The unique identifier string if found, otherwise `None`.
 
 ### 3. `find_results_links(url)`  
-   **Description**: Scrapes the UFC results page to collect event links, filtering out non-result pages like weigh-ins or bonus announcements. Uses pagination to gather links until no more pages are available.  
-   **Returns**: A list of URLs linking to individual event results pages.
+ - **Description**: Scrapes the UFC results page to collect event links, filtering out non-result pages like weigh-ins or bonus announcements. Uses pagination to gather links until no more pages are available.  
+ - **Returns**: A list of URLs linking to individual event results pages.
 
 ### 4. `find_event_scorecard_links(results_links)`  
-   **Description**: Processes each event link to identify scorecard links. If no explicit scorecard link exists, it visits the page and finds any "official scorecard" links within.  
-   **Returns**: A list of URLs that contain scorecards for each event.
+ - **Description**: Processes each event link to identify scorecard links. If no explicit scorecard link exists, it visits the page and finds any "official scorecard" links within.  
+ - **Returns**: A list of URLs that contain scorecards for each event.
 
 ### 5. `remove_redundant_links(event_scorecard_links)`  
-   **Description**: Cleans up the scorecard links list by removing duplicates or links with unnecessary query parameters. This function is critical to ensure clean, non-redundant data.  
-   **Returns**: Two lists — one with cleaned links and another with redundant links removed.
+ - **Description**: Cleans up the scorecard links list by removing duplicates or links with unnecessary query parameters. This function is critical to ensure clean, non-redundant data.  
+ - **Returns**: Two lists — one with cleaned links and another with redundant links removed.
 
 ### 6. `add_manual_event_scorecard_links(existing_links, manual_links)`  
-   **Description**: Adds manually identified scorecard links that may have been missed in automated scraping, ensuring each link is added only once.  
-   **Returns**: A combined list of existing and manual links, avoiding duplicates.
+ - **Description**: Adds manually identified scorecard links that may have been missed in automated scraping, ensuring each link is added only once.  
+ - **Returns**: A combined list of existing and manual links, avoiding duplicates.
 
 ### 7. `parse_folder_name_from_event_scorecard_link(event_scorecard_link)`  
-   **Description**: Generates a valid folder name from a scorecard link by converting hyphens to underscores and removing invalid characters.  
-   **Returns**: A formatted folder name string.
+ - **Description**: Generates a valid folder name from a scorecard link by converting hyphens to underscores and removing invalid characters.  
+ - **Returns**: A formatted folder name string.
 
 ### 8. `download_images_from_event_scorecard_link_and_create_pdf(event_scorecard_link, event_index)`  
-   **Description**: Scrapes and downloads images from a given scorecard link, stores them in a specific folder, and compiles the images into a PDF.  
-   **Returns**: Creates a folder with images and a PDF file for the event scorecard if successful.
+ - **Description**: Scrapes and downloads images from a given scorecard link, stores them in a specific folder, and compiles the images into a PDF.  
+ - **Returns**: Creates a folder with images and a PDF file for the event scorecard if successful.
 
 ### 9. `find_folders_without_pdfs(parent_directory)`  
-   **Description**: Checks each subdirectory within a parent directory and identifies folders that do not contain a PDF file.  
-   **Returns**: A list of folder names without PDFs.
+ - **Description**: Checks each subdirectory within a parent directory and identifies folders that do not contain a PDF file.  
+ - **Returns**: A list of folder names without PDFs.
 
 ### 10. `create_pdf_from_images(folder_path)`  
-   **Description**: Creates a PDF file from all `.jpg` or `.jpeg` images within a specified folder. Used to manually compile PDFs if the automated process fails.  
-   **Returns**: A PDF file if images exist, otherwise outputs an error message.
+ - **Description**: Creates a PDF file from all `.jpg` or `.jpeg` images within a specified folder. Used to manually compile PDFs if the automated process fails.  
+ - **Returns**: A PDF file if images exist, otherwise outputs an error message.
 
 ---
 
