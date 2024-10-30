@@ -123,16 +123,6 @@ The program downloads and processes individual scorecard images, compiling them 
 
 ---
 
-## Key Functions
-
-1. **extract_url_text_to_compare_previous_link(url)** - Extracts unique identifiers from URLs to prevent duplicate entries.
-2. **find_results_links(url)** - Collects links to each UFC event result page.
-3. **find_event_scorecard_links(results_links)** - Identifies links to the official scorecards for each event.
-4. **download_images_from_event_scorecard_link_and_create_pdf(event_scorecard_link, event_index)** - Downloads scorecard images and compiles them into PDFs.
-5. **find_folders_without_pdfs(parent_directory)** - Checks each folder for missing PDFs.
-
----
-
 ## Manual Intervention
 
 If a PDF fails to compile, the program provides a manual function `create_pdf_from_images(folder_path)` that creates a PDF from any images within a specified folder. This ensures data completeness even if the automated process encounters issues.
