@@ -129,4 +129,3 @@ If a PDF fails to compile, the program provides a manual function `create_pdf_fr
 
 ---
 
-This documentation provides an overview of the UFC Scorecard Scraper, detailing its functionality, data structure, and key workflows for scraping and organizing UFC event data.
