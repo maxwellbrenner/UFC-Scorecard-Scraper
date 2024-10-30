@@ -67,6 +67,9 @@ This program is designed to scrape event data and scorecards from the UFC websit
 7. **Manually Compile PDFs (if needed)**  
    If automated PDF creation fails, `create_pdf_from_images()` can be used to compile images from specified folders manually.
 
+
+## Starting Point of the Program
+
 ## UFC Scorecard Images
 
 ![UFC Scorecard - Results Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Results%20Page.png)
