@@ -5,8 +5,8 @@ This program is designed to scrape event data and scorecards from the UFC websit
 ## Function Descriptions
 
 ### 1. `extract_url_text_to_compare_previous_link(url)`  
-   **Description**: Extracts the unique identifier from the URL by focusing on the part between `'ufc'` and `'vs'`. This helps detect redundant entries in the URLs.  
-   **Returns**: The unique identifier string if found, otherwise `None`.
+ - **Description**: Extracts the unique identifier from the URL by focusing on the part between `'ufc'` and `'vs'`. This helps detect redundant entries in the URLs.  
+ - **Returns**: The unique identifier string if found, otherwise `None`.
 
 ### 2. `extract_unique_identifier(url)`  
    **Description**: Extracts a broader identifier from the UFC event URL using the section after `'/news/'`. Helps in identifying URLs with varied structures to ensure data completeness.  
