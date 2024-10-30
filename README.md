@@ -1,6 +1,4 @@
 # UFC Scorecard Scraper
-Moving forward, in addition to writing real-time scraping software to capture and archive live-odds data, I would like to write an Expected Round Calculator, which would generate probability distributions for rounds scores based on the in-round statistics for each fighter. 
-
 The script provided is part of a comprehensive system designed to automate the extraction and organization of UFC event data, particularly focusing on fight results and judge scorecards. The main objective is to capture round scores and outcomes from various UFC events, which are then stored for further analysis and used to develop predictive models like the Expected Round Calculator.
 
 The script begins by defining a series of functions aimed at navigating through the UFC's official results webpage to systematically gather links to individual event scorecards. Utilizing Python's requests() library to fetch webpage content and BeautifulSoup() from the bs4() package to parse this content, the script identifies relevant links by examining the text and href attributes of each link element. The find_results_links() function initiates this process by collecting all unique event result links from the UFC results page, filtering out unnecessary links such as those related to weigh-ins or bonuses that do not contain actual fight results.
