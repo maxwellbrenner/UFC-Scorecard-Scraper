@@ -14,3 +14,23 @@ Finally, the script transitions from data collection to processing by downloadin
 Overall, the script is a critical component of a larger data-driven framework aimed at enhancing the predictive accuracy and strategic analysis of UFC fights. By automating the collection and organization of fight data, the script supports deeper statistical analysis and model building efforts, like the Expected Round Calculator, which would utilize the meticulously compiled scorecards to predict fight outcomes based on real-time in-fight statistics.
 
 Once the scorecards have been appended into PDF format, these files can be fed into an OCR engine (Tesseract) to extract all pertinent scorecard information and write it to a CSV, which can then we compiled into a dataframe and analyzed.
+
+# UFC Event Data Scraper and Expected Round Calculator
+
+This project is part of a comprehensive system designed to automate the extraction, organization, and analysis of UFC event data. The primary focus is on collecting fight results and judge scorecards, which are then stored for further analysis and used to develop predictive models like the Expected Round Calculator. The Expected Round Calculator generates probability distributions for round scores based on the in-round statistics for each fighter.
+
+## Overview
+
+This project achieves the following:
+- **Automated Data Collection**: Real-time scraping of UFC results pages to collect links to individual event scorecards.
+- **Data Filtering and Organization**: Systematic filtering and organization of relevant links, avoiding redundancy and capturing only essential data.
+- **Data Archiving**: Downloading and storing images of judge scorecards, converting them into organized PDF files per event.
+
+## Project Flow
+
+The project flow consists of several steps:
+1. **Data Collection**: Extract relevant event links from the UFC's official results page.
+2. **Link Filtering**: Filter out irrelevant links and remove redundancy, maintaining a clean dataset.
+3. **Scorecard Download and PDF Creation**: Capture judge scorecard images and organize them into a structured archive.
+
+---
