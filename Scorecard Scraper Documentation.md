@@ -44,44 +44,6 @@ This program is designed to scrape event data and scorecards from the UFC websit
    **Description**: Creates a PDF file from all `.jpg` or `.jpeg` images within a specified folder. Used to manually compile PDFs if the automated process fails.  
    **Returns**: A PDF file if images exist, otherwise outputs an error message.
 
-## Program Execution Flow
-
-### 1. **Start Data Collection with `find_results_links(url)`**  
-   The script starts by collecting event result links using the `find_results_links()` function, which navigates the UFC results page to gather relevant URLs.
-
-![UFC Scorecard - Results Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Results%20Page.png)
-
-### 2. **Collect and Filter Scorecard Links with `find_event_scorecard_links(results_links)`**  
-   Each event result link is processed by `find_event_scorecard_links()` to identify the official scorecard links, either directly or by searching within the page.
-
-![UFC Scorecard - Load More](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Load%20More.png)
-
-### 3. **Remove Redundant Links**  
-   After collecting the scorecard links, `remove_redundant_links()` filters out duplicates, ensuring only unique links are retained.
-
-![UFC Scorecard - Event Row Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Event%20Row%20Page.png)
-
-### 4. **Add Manual Links**  
-   Any missed scorecards are added using `add_manual_event_scorecard_links()`, ensuring complete data collection.
-
-![UFC Scorecard - Event Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Event%20Page.png)
-
-### 5. **Download Scorecard Images and Create PDFs**  
-   The `download_images_from_event_scorecard_link_and_create_pdf()` function downloads each event’s scorecard images and compiles them into a PDF.
-
-6. **Identify Folders Missing PDFs**  
-   `find_folders_without_pdfs()` scans the folders to identify any missing PDFs, highlighting cases where the automated process may have failed.
-
-7. **Manually Compile PDFs (if needed)**  
-   If automated PDF creation fails, `create_pdf_from_images()` can be used to compile images from specified folders manually.
-
-
-## Starting Point of the Program
-
-# UFC Event Data Scraper Documentation
-
-This program is designed to scrape UFC event data, including scorecards from the UFC website. It automatically collects, organizes, and compiles fight scorecards into PDF files and provides functions for additional data handling if the automatic process fails.
-
 ---
 
 ## Program Overview
