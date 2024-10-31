@@ -2,6 +2,15 @@
 
 This program is designed to scrape event data and scorecards from the UFC website, downloading images of the scorecards, and compiling them into PDF files. It automatically filters and organizes results, processes images, and enables manual creation of PDFs if necessary.
 
+## Program Overview
+
+1. **Collects Scorecard Data**: Scrapes the UFC results page for event links.
+2. **Processes Scorecard Links**: Identifies scorecard links, downloads images, and compiles them into PDFs.
+3. **File Management**: Organizes images into folders and identifies missing PDFs.
+4. **Manual PDF Creation**: Allows for manual PDF creation if automated creation fails.
+
+---
+
 ## Function Descriptions
 
 ### 1. `extract_url_text_to_compare_previous_link(url)`  
@@ -43,15 +52,6 @@ This program is designed to scrape event data and scorecards from the UFC websit
 ### 10. `create_pdf_from_images(folder_path)`  
  - **Description**: Creates a PDF file from all `.jpg` or `.jpeg` images within a specified folder. Used to manually compile PDFs if the automated process fails.  
  - **Returns**: A PDF file if images exist, otherwise outputs an error message.
-
----
-
-## Program Overview
-
-1. **Collects Scorecard Data**: Scrapes the UFC results page for event links.
-2. **Processes Scorecard Links**: Identifies scorecard links, downloads images, and compiles them into PDFs.
-3. **File Management**: Organizes images into folders and identifies missing PDFs.
-4. **Manual PDF Creation**: Allows for manual PDF creation if automated creation fails.
 
 ---
 
