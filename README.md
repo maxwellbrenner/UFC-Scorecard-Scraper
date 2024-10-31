@@ -4,7 +4,12 @@
 
 ## Project Functionality
 
-This project provides software to scrape official UFC event scorecard images from the [UFC.com](https://www.ufc.com/) website. It organizes these images by event, downloads them, and compiles them into PDFs for each event. This allows easy access to official scorecards for fans, analysts, and researchers interested in fight results and judges' decisions.
+This project provides software to scrape official UFC event scorecard images from the [UFC](https://www.ufc.com/) website. It organizes these images by event, downloads them, and compiles them into PDFs for each event. These images/PDFs can then be fed into a OCR engine (Tesseract) to parse round scores for each of the three judges.
+
+The script is unique in the sense that all scorecard scraping software I've seen parses round scores from [MMADecisions](https://mmadecisions.com/), which only archives fights that go Decision, and does not provide information on fights that end prematurely. 
+
+Even in the case of an early stoppage, all completed rounds are scored by all three judges. Several years ago, the UFC began publishing these scorecards on their website as image files. Though it is much more difficult to parse text from an image than from HTML, this approach nearly doubles the data set (# of completed rounds scored). 
+
 
 The script is structured to capture links to events, navigate to scorecards, filter out unnecessary content, and manage pagination on the results page. It has several modular functions to ensure effective navigation and data organization.
 
@@ -43,25 +48,10 @@ The script requires the following Python packages:
 - `os`: For managing local directories and file paths.
 - `img2pdf`: To compile downloaded images into PDFs.
 
-### Setup and Execution
-
-1. **Install Required Packages**:
-    ```bash
-    pip install requests beautifulsoup4 img2pdf
-    ```
-   
-2. **Run the Script**:
-    Execute the script by running:
-    ```bash
-    python main.py
-    ```
-
-This will begin the scraping process, organizing scorecards by event, downloading images, and compiling PDFs.
-
 ### Folder Structure and File Naming
 
 - **Event Folders**: Each event has a designated folder (`event_[number]_[event_name]`) within `ufc_images/`, organizing images by event.
-- **PDF Files**: PDFs for each event are named with the event number and name, e.g., `1_ufc_308_topuria_vs_holloway.pdf`.
+- **PDF Files**: PDFs for each event are named with the event number and name (e.g., `1_ufc_308_topuria_vs_holloway.pdf`).
 
 ### Notes
 
