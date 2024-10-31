@@ -2,6 +2,8 @@
 
 This program is designed to scrape event data and scorecards from the UFC website, downloading images of the scorecards, and compiling them into PDF files. It automatically filters and organizes results, processes images, and enables manual creation of PDFs if necessary.
 
+![UFC Scorecard - Results Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Results%20Page.png)
+
 ## Program Overview
 
 1. **Collects Scorecard Data**: Scrapes the UFC results page for event links.
@@ -61,7 +63,7 @@ This program is designed to scrape event data and scorecards from the UFC websit
 
 The program starts by collecting event result links using the `find_results_links(url)` function, which navigates through the UFC results page, filtering out irrelevant links (such as weigh-ins or bonus announcements).
 
-![UFC Scorecard - Results Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Results%20Page.png)
+![UFC Scorecard - Load More](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Load%20More.png)
 
 - **Description**: The results page lists various UFC events with links to detailed results pages.
 - **Function**: `find_results_links()` identifies and stores links to relevant fight events.
@@ -72,7 +74,7 @@ The program starts by collecting event result links using the `find_results_link
 
 Once the program has a list of event links, it uses `find_event_scorecard_links(results_links)` to identify links to each event's official scorecard. This function helps filter down to pages that contain the actual scorecard details.
 
-![UFC Scorecard - Load More](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Load%20More.png)
+![UFC Scorecard - Event Row Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Event%20Row%20Page.png)
 
 - **Description**: The "Load More" button allows access to more results on the UFC website, enabling pagination for larger datasets.
 - **Function**: The script handles multiple pages, using the "Load More" functionality to collect all relevant links.
@@ -83,7 +85,7 @@ Once the program has a list of event links, it uses `find_event_scorecard_links(
 
 The program then processes each event link to find scorecards. If an explicit scorecard link is available, it is saved directly; otherwise, the program visits the page to find links to the "Official Scorecard".
 
-![UFC Scorecard - Event Row Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Event%20Row%20Page.png)
+![UFC Scorecard - Event Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Event%20Page.png)
 
 - **Description**: Each row on the event page represents a different event, allowing users to see both main and preliminary results.
 - **Function**: This helps the scraper identify specific event rows containing scorecard information.
@@ -94,7 +96,7 @@ The program then processes each event link to find scorecards. If an explicit sc
 
 Once scorecard links are identified, `download_images_from_event_scorecard_link_and_create_pdf()` downloads images for each event and compiles them into a PDF.
 
-![UFC Scorecard - Event Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Event%20Page.png)
+![UFC Scorecard - Official Scorecard Link](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Official%20Scorecard%20Link.png)
 
 - **Description**: This is the main event page, showing the overall fight card and main event information.
 - **Function**: This allows the scraper to access specific scorecards and download images from this page.
@@ -105,7 +107,7 @@ Once scorecard links are identified, `download_images_from_event_scorecard_link_
 
 When accessing specific fights, the scraper identifies and follows links labeled "Official Scorecard," which contains the details for each fight's score.
 
-![UFC Scorecard - Official Scorecard Link](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Official%20Scorecard%20Link.png)
+![UFC Scorecard - Fight Scorecard](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Fight%20Scorecard.png)
 
 - **Description**: Links like this take users to the official scorecard for a fight, providing detailed scoring information.
 - **Function**: This link ensures the scraper collects official data and avoids duplicate or irrelevant links.
@@ -115,8 +117,6 @@ When accessing specific fights, the scraper identifies and follows links labeled
 ### 6. Example of a Scorecard
 
 The program downloads and processes individual scorecard images, compiling them into PDFs for record-keeping and analysis.
-
-![UFC Scorecard - Fight Scorecard](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Fight%20Scorecard.png)
 
 - **Description**: Each fight scorecard displays the judges' scores round-by-round for both fighters.
 - **Function**: This image provides the basis for generating a complete scorecard PDF for each event.
