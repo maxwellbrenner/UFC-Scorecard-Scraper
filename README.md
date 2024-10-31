@@ -52,7 +52,7 @@ The script requires the following Python packages:
 ### Folder Structure and File Naming
 
 - **Event Folders**: Each event has a designated folder (`event_[number]_[event_name]`) within `ufc_images/`, organizing images by event.
-- **PDF Files**: PDFs for each event are named with the event number and name (e.g., `1_ufc_308_topuria_vs_holloway.pdf`).
+- **PDF Files**: PDFs for each event are named with the event number and name (e.g., `25_official_judges_scorecards_ufc_fight_night_allen_vs_curtis_2.pdf`).
 
 ### Notes
 
