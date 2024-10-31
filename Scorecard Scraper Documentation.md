@@ -63,6 +63,8 @@ This program is designed to scrape event data and scorecards from the UFC websit
 
 The program starts by collecting event result links using the `find_results_links(url)` function, which navigates through the UFC results page, filtering out irrelevant links (such as weigh-ins or bonus announcements).
 
+![UFC Scorecard - Results Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Results%20Page.png)
+
 - **Description**: The results page lists various UFC events with links to detailed results pages.
 - **Function**: `find_results_links()` identifies and stores links to relevant fight events.
 
