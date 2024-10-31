@@ -10,8 +10,9 @@ The script is unique in the sense that all scorecard scraping software I've seen
 
 Even in the case of an early stoppage, all completed rounds are scored by all three judges. Several years ago, the UFC began publishing these scorecards on their website as image files. Though it is much more difficult to parse text from an image than from HTML, this approach nearly doubles the data set (# of completed rounds scored). 
 
-
 The script is structured to capture links to events, navigate to scorecards, filter out unnecessary content, and manage pagination on the results page. It has several modular functions to ensure effective navigation and data organization.
+
+This project enables users to collect, organize, and review official UFC scorecards efficiently, whether for analysis or personal interest.
 
 ### 1. Event Results and Scorecards
 
@@ -57,6 +58,3 @@ The script requires the following Python packages:
 
 This script is designed to handle any future UFC events published on [UFC.com](https://www.ufc.com/). It can be updated with new manual links if needed to ensure a comprehensive collection.
 
---- 
-
-This project enables users to collect, organize, and review official UFC scorecards efficiently, whether for analysis or personal interest.
