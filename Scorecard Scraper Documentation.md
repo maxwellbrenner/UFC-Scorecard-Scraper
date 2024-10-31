@@ -97,8 +97,6 @@ The program then processes each event link to find scorecards. If an explicit sc
 
 Once scorecard links are identified, `download_images_from_event_scorecard_link_and_create_pdf()` downloads images for each event and compiles them into a PDF.
 
-![UFC Scorecard - Official Scorecard Link](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Official%20Scorecard%20Link.png)
-
 - **Description**: This is the main event page, showing the overall fight card and main event information.
 - **Function**: This allows the scraper to access specific scorecards and download images from this page.
 
@@ -108,7 +106,7 @@ Once scorecard links are identified, `download_images_from_event_scorecard_link_
 
 When accessing specific fights, the scraper identifies and follows links labeled "Official Scorecard," which contains the details for each fight's score.
 
-![UFC Scorecard - Fight Scorecard](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Fight%20Scorecard.png)
+![UFC Scorecard - Official Scorecard Link](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Official%20Scorecard%20Link.png)
 
 - **Description**: Links like this take users to the official scorecard for a fight, providing detailed scoring information.
 - **Function**: This link ensures the scraper collects official data and avoids duplicate or irrelevant links.
@@ -118,6 +116,8 @@ When accessing specific fights, the scraper identifies and follows links labeled
 ### 6. Example of a Scorecard
 
 The program downloads and processes individual scorecard images, compiling them into PDFs for record-keeping and analysis.
+
+![UFC Scorecard - Fight Scorecard](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Fight%20Scorecard.png)
 
 - **Description**: Each fight scorecard displays the judges' scores round-by-round for both fighters.
 - **Function**: This image provides the basis for generating a complete scorecard PDF for each event.
