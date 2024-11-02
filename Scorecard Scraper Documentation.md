@@ -1,6 +1,6 @@
 # UFC Scorecard Scraper
 
-This program is designed to scrape event data and scorecards from the UFC website, downloading images of the scorecards, and compiling them into PDF files. It automatically filters and organizes results, processes images, and enables manual creation of PDFs if necessary.
+The UFC Scorecard Scraper collects official event scorecards from the UFC website, downloading scorecard images and organizing them by event. It compiles these images into PDFs for each event, allowing the images to be easily reviewed or parsed with an OCR engine.
 
 ![UFC Scorecard - Results Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Results%20Page.png)
 
@@ -13,7 +13,25 @@ This program is designed to scrape event data and scorecards from the UFC websit
 
 ---
 
-## Function Descriptions
+## Overview of the `main()` Function
+
+The `main()` function orchestrates the scraping process by following these steps:
+
+1. **Collect Event Links**: The `find_results_links()` function gathers links to recent UFC events by scraping the UFC results page. It filters out links irrelevant to fight results (like weigh-ins) and handles pagination to access all available events.
+
+2. **Identify Scorecard Links**: For each event, `find_event_scorecard_links()` extracts links to the official scorecards. If no direct link to scorecards is available, it searches the event page to locate any embedded "official scorecard" links.
+
+3. **Download and Compile Scorecard Images**: The `download_images_from_event_scorecard_link_and_create_pdf()` function processes each scorecard link, downloading images and compiling them into a PDF, named by event. Images are saved in folders structured by event for easy navigation.
+
+4. **Check for Missing PDFs**: After processing, the `find_folders_without_pdfs()` function identifies any event folders missing PDFs, ensuring completeness in case of download errors.
+
+5. **Manual PDF Creation**: If any images are missing PDFs, `create_pdf_from_images()` manually generates a PDF from all images in a specified folder, providing a fallback if the automated process encounters issues.
+
+By the end of `main()`, the program has organized and stored scorecards from multiple events, ensuring a comprehensive dataset of official UFC scorecards.
+
+---
+
+## Function Descriptions -- Ordered by Execution in `main()`
 
 ### 1. `sanitize_filename(filename)`
 - **Description**: Cleans a filename by removing special characters and truncating it to 50 characters to ensure compatibility with different file systems.
@@ -66,74 +84,68 @@ This program is designed to scrape event data and scorecards from the UFC websit
 
 ## Execution Flow
 
-### 1. Starting the Data Collection
+The `main()` function initiates the scraping process, collecting event links, identifying scorecard links, downloading images, and creating PDFs. Finally, it verifies completeness by checking each folder for a corresponding PDF. This function ensures the entire workflow runs smoothly from data collection to output organization.
 
-The program starts by collecting event result links using the `find_results_links(url)` function, which navigates through the UFC results page, filtering out irrelevant links (such as weigh-ins or bonus announcements).
+### 1. Collect Event Links
+
+The scraper begins by retrieving event links from the UFC results page using `find_results_links()`. It filters out non-fight links (such as weigh-ins or bonus announcements) and processes pagination to ensure comprehensive data collection.
 
 ![UFC Scorecard - Results Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Results%20Page.png)
 
-- **Description**: The results page lists various UFC events with links to detailed results pages.
-- **Function**: `find_results_links()` identifies and stores links to relevant fight events.
+- **Description**: The results page lists completed UFC events, each linking to individual event pages.
+- **Function**: `find_results_links()` collects links to relevant fight events.
 
 ---
 
-### 2. Collecting Event Scorecards
+### 2. Identify Scorecard Links
 
-Once the program has a list of event links, it uses `find_event_scorecard_links(results_links)` to identify links to each event's official scorecard. This function helps filter down to pages that contain the actual scorecard details.
+With event links gathered, the program uses `find_event_scorecard_links()` to locate links to official scorecards. For events without direct scorecard links, it parses the event pages to extract embedded "official scorecard" links.
 
 ![UFC Scorecard - Event Row Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Event%20Row%20Page.png)
 ![UFC Scorecard - Load More](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Load%20More.png)
 
-- **Description**: The "Load More" button allows access to more results on the UFC website, enabling pagination for larger datasets.
-- **Function**: The script handles multiple pages, using the "Load More" functionality to collect all relevant links.
+- **Description**: The "Load More" button on the UFC results page allows for accessing older events, facilitating data retrieval for larger datasets.
+- **Function**: `find_event_scorecard_links()` gathers all event-specific scorecard links.
 
 ---
 
-### 3. Processing Event Pages
+### 3. Process Event Pages for Scorecards
 
-The program then processes each event link to find scorecards. If an explicit scorecard link is available, it is saved directly; otherwise, the program visits the page to find links to the "Official Scorecard".
+The program processes each event page to verify scorecard links. If a scorecard link is available, it is saved directly; otherwise, the program scans the page for an "Official Scorecard" link.
 
 ![UFC Scorecard - Event Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Event%20Page.png)
 
-- **Description**: Each row on the event page represents a different event, allowing users to see both main and preliminary results.
-- **Function**: This helps the scraper identify specific event rows containing scorecard information.
+- **Description**: Each event row on the event page allows for accessing main and preliminary fight results.
+- **Function**: The scraper identifies specific scorecards for each event.
 
 ---
 
-### 4. Downloading and Compiling Scorecard Images
+### 4. Download and Compile Scorecard Images
 
-Once scorecard links are identified, `download_images_from_event_scorecard_link_and_create_pdf()` downloads images for each event and compiles them into a PDF.
+Using the scorecard links, `download_images_from_event_scorecard_link_and_create_pdf()` downloads each event’s scorecard images and compiles them into a PDF.
 
-- **Description**: This is the main event page, showing the overall fight card and main event information.
-- **Function**: This allows the scraper to access specific scorecards and download images from this page.
-
----
-
-### 5. Official Scorecard Link and Fight Scorecard
-
-When accessing specific fights, the scraper identifies and follows links labeled "Official Scorecard," which contains the details for each fight's score.
-
-![UFC Scorecard - Official Scorecard Link](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Official%20Scorecard%20Link.png)
-
-- **Description**: Links like this take users to the official scorecard for a fight, providing detailed scoring information.
-- **Function**: This link ensures the scraper collects official data and avoids duplicate or irrelevant links.
+- **Description**: The scorecard images are stored in organized folders by event, ensuring easy navigation and future reference.
+- **Function**: The scraper downloads images and compiles a PDF for each event’s scorecard.
 
 ---
 
-### 6. Example of a Scorecard
+### 5. Verify Scorecards and Create Missing PDFs
 
-The program downloads and processes individual scorecard images, compiling them into PDFs for record-keeping and analysis.
+Once all scorecard images are downloaded, `find_folders_without_pdfs()` checks each folder for PDFs, identifying any events that may be missing them. `create_pdf_from_images()` can then manually generate PDFs from available images.
+
+- **Description**: This step verifies that all scorecards have PDFs for easy access and analysis.
+- **Function**: Ensures every event has a corresponding scorecard PDF, with manual creation for any missing PDFs.
+
+---
+
+## Example of an Event Scorecard
+
+The scraper collects individual scorecard images and compiles them into PDFs for each event, such as the one shown below:
 
 ![UFC Scorecard - Fight Scorecard](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Fight%20Scorecard.png)
 
-- **Description**: Each fight scorecard displays the judges' scores round-by-round for both fighters.
-- **Function**: This image provides the basis for generating a complete scorecard PDF for each event.
-
----
-
-## Manual Intervention
-
-If a PDF fails to compile, the program provides a manual function `create_pdf_from_images(folder_path)` that creates a PDF from any images within a specified folder. This ensures data completeness even if the automated process encounters issues.
+- **Description**: Each fight scorecard details the judges' scores for each round.
+- **Function**: These images provide the basis for comprehensive scorecard PDFs for each event.
 
 ---
 
