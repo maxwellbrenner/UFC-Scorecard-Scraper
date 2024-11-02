@@ -8,7 +8,7 @@ This project provides software to scrape official UFC event scorecard images fro
 
 The script is unique in the sense that all scorecard scraping software I've seen parses round scores from [MMADecisions](https://mmadecisions.com/), which only archives fights that go Decision, and does not provide information on fights that end prematurely. 
 
-Even in the case of an early stoppage, all completed rounds are scored by all three judges. Several years ago, the UFC began publishing these scorecards on their website as image files. Though it is much more difficult to parse text from an image than from HTML, this approach nearly doubles the data set (# of completed rounds scored). 
+Even in the case of an early stoppage, all completed rounds are scored by all three judges. Several years ago, the UFC began publishing these scorecards on their website as image files. Though it is much more difficult to parse text from an image than from HTML, this approach nearly doubles the data set (# of scored rounds). 
 
 The script is structured to capture links to events, navigate to scorecards, filter out unnecessary content, and manage pagination on the results page. It has several modular functions to ensure effective navigation and data organization.
 
