@@ -1,6 +1,6 @@
 # UFC Scorecard Scraper
 
-The UFC Scorecard Scraper collects official event scorecards from the UFC website, downloading scorecard images and organizing them by event. It compiles these images into PDFs for each event, allowing the images to be easily reviewed or parsed with an OCR engine.
+The `UFC Scorecard Scraper` collects official event scorecards from the UFC website, downloading scorecard images and organizing them by event. It compiles these images into PDFs for each event, allowing the images to be easily reviewed or parsed with an OCR engine.
 
 ![UFC Scorecard - Results Page](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Results%20Page.png)
 
