@@ -25,7 +25,7 @@ Each event's page is then accessed to collect specific scorecard links, bypassin
 ### 2. Image Downloading and PDF Creation
 
 For each scorecard link, the program downloads official UFC scorecard images:
-- **Image Filtering**: Selects images hosted on UFC’s CDN (`dmxg5wxfqgb4u.cloudfront.net`) for accuracy.
+- **Image Filtering**: Only selects images hosted on UFC’s CDN `dmxg5wxfqgb4u.cloudfront.net`.
 - **PDF Compilation**: All downloaded images for each event are compiled into a single PDF. The file is named based on the event details, and the PDFs are stored in a structured directory.
 
 ### 3. Redundancy and Manual Link Handling
