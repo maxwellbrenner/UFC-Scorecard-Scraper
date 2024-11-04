@@ -127,6 +127,8 @@ Using the scorecard links, `download_images_from_event_scorecard_link_and_create
 - **Description**: The scorecard images are stored in organized folders by event, ensuring easy navigation and future reference.
 - **Function**: The scraper downloads images and compiles a PDF for each event’s scorecard.
 
+![UFC Scorecard - Fight Scorecard](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Fight%20Scorecard.png)
+
 ---
 
 ### 5. Verify Scorecards and Create Missing PDFs
@@ -135,17 +137,6 @@ Once all scorecard images are downloaded, `find_folders_without_pdfs()` checks e
 
 - **Description**: This step verifies that all scorecards have PDFs for easy access and analysis.
 - **Function**: Ensures every event has a corresponding scorecard PDF, with manual creation for any missing PDFs.
-
----
-
-## Example of an Event Scorecard
-
-The scraper collects individual scorecard images and compiles them into PDFs for each event, such as the one shown below:
-
-![UFC Scorecard - Fight Scorecard](https://github.com/maxwellbrenner/UFC-Scorecard-Scraper/raw/main/images%20(UFC.com)/UFC%20Scorecard%20-%20Fight%20Scorecard.png)
-
-- **Description**: Each fight scorecard details the judges' scores for each round.
-- **Function**: These images provide the basis for comprehensive scorecard PDFs for each event.
 
 ---
 
