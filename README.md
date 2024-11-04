@@ -4,7 +4,7 @@
 
 ## Project Functionality
 
-This project provides software to scrape official UFC event scorecard images from the [UFC](https://www.ufc.com/) website. It organizes these images by event, downloads them, and compiles them into PDFs for each event. These images/PDFs can then be fed into a OCR engine (Tesseract) to parse round scores for each of the three judges.
+This project provides software to scrape official fight scorecard images from the [UFC](https://www.ufc.com/) website. It organizes these images by event, downloads them, and compiles them into PDFs for each event. These images/PDFs can then be fed into a OCR engine (Tesseract) to parse round scores for each of the three judges.
 
 The script is unique in the sense that all scorecard scraping software I've seen parses round scores from [MMADecisions](https://mmadecisions.com/), which only archives fights that go Decision, and does not provide information on fights that end prematurely. 
 
